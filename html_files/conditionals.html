@@ -1,0 +1,286 @@
+<!-- ----------------------------------------------- IFS L4T15 - Back to JS -----------------------------------------------
+    
+    This is the Conditional Stataments page for my "Back To JS" website. It provides information about JavaScript 
+    'if..else' statements, and includes examples and a practice section for users to interact with.
+    
+    Please see conditionals.js for this page's JavaScript code and functionality.
+    Please see 'style.css' for the styling of this page.
+
+---------------------------------------------------------------------------------------------------------------------- -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="./js_files/variables.js"></script>
+    <!-- Link to SCSS file's compiled 'style.css' -->
+    <link href="/style.css" rel="stylesheet">
+    <!-- Link to Bootstrap 5 CSS. -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+        crossorigin="anonymous"
+    >
+    <title>Conditional Statements</title>
+</head>
+
+<body>
+    <!-- ==================== HEADER SECTION ==================== -->
+    <header class=" myNav myNavBackground">
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <div class="container-fluid">
+                <!-- Navbar button (hamburger) for small viewports -->
+                <button 
+                    class="navbar-toggler" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarSupportedContent" 
+                    aria-controls="navbarSupportedContent" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar categories with links to sections. -->
+                <div class="collapse navbar-collapse myNavBackground" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-fill w-100 me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="variables.html">Variables</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="conditionals.html">Conditional Statements</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="arraysLoops.html">Arrays & Loops</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="maps.html">Maps</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="functions.html">Functions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="events.html">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="jquery.html">jQuery</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+     <!-- ==================== PAGE HEADING SECTION ==================== -->
+     <div class="container-fluid pb-4 pt-2 sectionHeadings">
+        <div class="row gx-5 mx-4 my-3">
+            <div class="col-sm my-3 py-3 ps-0 text-center">
+                <h1  id="topOfPage" class="my-3 pt-5 display-1 sectionHeading">
+                    Basic JavaScript Syntax
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CONDITIONAL STATEMENTS SECTION ==================== -->
+    <div class="container-fluid pb-4 pt-3 lightSection" id="conditionalsSection">
+        <!-- Row: section title. -->
+        <div class="row gx-5 mx-4 my-3 text-center">
+            <h1 class="text-center my-3 subSectionTitle">Conditional Statements</h1>
+        </div>
+
+        <!-- Row: Conditional Statements description. -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center">
+            <div class="col-sm-10 px-3">
+                <p>
+                    Conditional statements are used to perform 
+                    <a href=" https://www.w3schools.com/js/js_if_else.asp" target="_blank" class="myLink">
+                        different actions based on different conditions
+                    </a>. 
+                    When writing code, we often want to perform a set of specific or different actions for different decisions.
+                </p>
+                <p>
+                    For example, in a program that functions as a temperature metric converter, we would want to display 
+                    to the user both their selected temperature and metric, as well as the converted temperature and metric 
+                    (e.g. if the user wants to convert 32C to F, we would want our program to perform a specific set of actions 
+                    for converting from Celcius to Fahrenheit). You can use conditional statements to do this.
+                </p>
+                <p>
+                    In JavaScript we have the following conditional statements:
+                    <ul>
+                        <Li>
+                            An <span class="codeExample">if</span> 
+                            statement: specifies a block of code to be executed, if a specified condition is true.
+                        </Li>
+                        <Li>
+                            An <span class="codeExample">else</span> 
+                            statement: specifies a block of code to be executed, if the same condition is false.
+                        </Li>
+                        <Li>
+                            An <span class="codeExample">else if</span> 
+                            statement: specifies a new condition to test, if the first condition is false.
+                        </Li>
+                        <Li>
+                            A <span class="codeExample">switch</span> 
+                            statement: specifies many alternative blocks of code to be executed.
+                        </Li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Row: Conditional Statements example. -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center">
+            <div class="col-sm-10 px-3">
+                <h2 class="text-start my-3">Example of Conditional Statements</h2>
+                <p> 
+                    Using the temperature converter example from above, the following JavaScript program 
+                    prompts a user for a metric and temperature they want converted, and the metric they want to convert to.
+                    The program then converts the inputted metric and temperature to the selected metric's temperature, 
+                    using an <span class="codeExample">if...else</span> statement, and outputs a string stating both the 
+                    inputted temperature and converted temerature, e.g. 0°C is 32°F.
+                </p>
+                <br>
+                <p class="lead">Step 1: </p>
+                <p>
+                    First, we want to have reassignable variables, so we declare them with the 
+                    <span class="codeExample">let</span> 
+                    keyword, and prompt the user to select the metric and temperature they want converted, as well as the 
+                    metric they want it converted to:
+                    <div class="text-center">
+                        <figure class="figure">
+                            <img 
+                                src="/images/tempVariables.png"  
+                                class="figure-img img-fluid rounded" 
+                                alt="JavaScript Code declaring variables with let keyword."
+                                id="exampleImage"
+                            >
+                            <figcaption class="figure-caption">
+                                Image source: N.Dobbin (for HyperionDev Course IFS L1T06: Capstone 
+                                Project I - Variables and Control Structures, 2022)
+                            </figcaption>
+                        </figure>
+                    </div>
+                </p>
+                <br>
+                <p class="lead">Step 2: </p>
+                <p>
+                    Next, we use the
+                    <span class="codeExample">if..else if..else</span> 
+                    conditional statements to convert the inputted temperature to the desired metric:
+                    <div class="text-center">
+                        <figure class="figure">
+                            <img 
+                                src="/images/tempIfElse.png"  
+                                class="figure-img img-fluid rounded" 
+                                alt="JavaScript Code example of 'if..else' conditional statement."
+                                id="exampleImage"
+                            >
+                            <figcaption class="figure-caption">
+                                Image source: N.Dobbin (for HyperionDev Course IFS L1T06: Capstone 
+                                Project I - Variables and Control Structures, 2022)
+                            </figcaption>
+                        </figure>
+                    </div>
+                </p>
+            </div>
+        </div>
+
+        <!-- Row: back to top button. -->
+        <div class="row mx-4 gx-5">
+            <div class="col-sm text-center">
+                <a href = "#topOfPage">
+                    <button type="button" class="btn btn-secondary">Back to top</button>
+                </a>
+            </div>
+        </div>
+        <br>
+        <br>
+
+    <!-- Close Conditional Statements section. -->    
+    </div>
+
+    <!-- ==================== PRACTICE SECTION ==================== -->
+    <!-- Row: Row: Practice section. -->
+    <div class="row gx-5 mx-4 my-3 justify-content-center" id="practiceConditionalsSection">
+        <!-- Row: Practice section title. -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center">
+            <div class="col-sm-10 px-3 pt-3">
+                <h1 class="text-center my-3 subSectionTitle">Practice what you've learned!</h1>
+            </div>
+        </div>
+
+        <!-- Row: description (palindromes function example). -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center">
+            <div class="col-sm-10 px-3 pt-3 text-center">
+                <h2>Practice: Palindromes</h2>
+                <p>
+                    This example demonstrates how we can use conditional statements to check if 
+                    an inputted word is a palindrome (i.e. the word is spelled the same forwards and backwards).
+                </p>
+                <p>
+                    The function in this example is called checkPalindrome(). It prompts a user to input any word, then 
+                    reverses the word and saves it to a new string, using a <span class="codeExample">while</span> loop. 
+                    It then compares the inputted string with the new string, using an <span class="codeExample">if...else</span> 
+                    conditional statement, and outputs the result to the &lt;p id="conditionalsExample"&gt; element 
+                    in the conditionals.html file.
+                </p>
+            </div>
+            <div class="text-center">
+                <figure class="figure">
+                    <img 
+                        src="/images/jsConditionals.png"  
+                        class="figure-img img-fluid rounded" 
+                        alt="JavaScript Code: function with conditional statements."
+                        id="exampleImageSmall"
+                    >
+                    <figcaption class="figure-caption">
+                        Image source: N.Dobbin (for HyperionDev Course IFS L4T07: Beginner Control Structures - Loops, 2022)
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <!-- Row: Practice activity section. -->
+        <div class="col-sm-10 px-3 pt-3 text-center">
+            <h4>Try it yourself!</h4>
+            <p>
+                See this conditional statement in action by clicking the button below. 
+                To see what's going on behind the scenes, 
+                <b><em>right-click anywhere on the page and click inspect.</b></em>
+            </p>
+            <!-- "Try this function!" button with onclick event. -->
+            <div class="text-center">
+                <br>
+                <button type="button" class="btn btn-secondary btn-lg my-2" id="myButton" onclick="checkPalindrome()">
+                    Try this function!
+                </button>
+                <h5 class="py-4" id="conditionalsExample"></h5>
+            </div>
+        </div>
+
+        <!-- Row: back to top button. -->
+        <div class="row mx-4 py-4 gx-5">
+            <div class="col-sm text-center">
+                <a href = "#topOfPage">
+                    <button type="button" class="btn btn-secondary">Back to top</button>
+                </a>
+            </div>
+        </div>
+        <br>
+        <hr>
+
+    <!-- Close Practice section. -->    
+    </div>
+
+    <!-- Link to conditionals.js file. -->
+    <script type="text/javascript" src="/js_files/conditionals.js"></script>
+</body>
+</html>

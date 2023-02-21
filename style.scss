@@ -1,0 +1,152 @@
+/*----------------------------------------------- IFS L4T15 - Back to JS -----------------------------------------------
+    
+    This is the stylesheet for my "Back To JS" website, an interactive website that forms a tutorial of JavaScript concepts.
+    It contains the styling for all the pages on this site.
+    
+    Please see 'README.md' for the list of files associated with this website and their details.
+
+-----------------------------------------------------------------------------------------------------------------------*/
+
+// ==================== COLOURS ====================
+// Declare colour variables.
+$myWhite: #eceaeb;
+$lightWhite: #F5F5F5;
+$myGrey: #555;
+$myBlack: #212529;
+$myBlueGreen: #05a8aa;
+$blueGreenDark: #037971;
+$blueGreenLight: #05AA8B;
+
+// ==================== NAVBAR ====================
+// Set nav bar font family and position to stick to top of page as user scrolls.
+.myNav {
+  font-family: "PT Sans", sans-serif;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+} 
+
+// Set nav bar background colour.
+  .myNavBackground {
+  background-color: #eceaeb !important;
+}
+  
+// ==================== BODY, HEADINGS, TITLES ====================
+// Set body background colour and font-family.
+body {
+  background-color: #eceaeb;
+  font-family: "PT Sans", sans-serif !important;
+}
+
+// Set all h1 element's font size and weight.
+h1 {
+  font-size: 48px !important;
+  font-weight: 600 !important;
+}
+
+// Set all h5 element's font size and weight.
+h5 {
+  font-size: 20px !important;
+  font-weight: 400 !important;
+}
+  
+// Set heading section's font and background colour.
+#pageHeadingSection {
+    background-color: $blueGreenDark !important;
+    color: $myWhite;
+}
+
+// Set heading section's font and background colour.
+.sectionHeadings {
+    background-color: $blueGreenDark !important;
+    color: $myWhite;
+}
+
+.subSectionTitle {
+  color: $myBlueGreen;
+}
+
+// ==================== BODY BACKGROUNDS ==================== 
+// Set all lightSections' font and background colour.
+.lightSection {
+  background-color: #F5F5F5 !important;
+  color: #212529;
+}
+
+// ==================== LINKS ====================
+// Set font colour for links.
+.myLink {
+  color: $myGrey;
+}
+
+// Set hover for links
+.myLink:hover {
+  color: $blueGreenLight;
+}
+
+// ==================== CODE EXAMPLES ====================
+// Set font-family for code examples.
+.codeExample {
+  font-family: 'Courier New', monospace;
+  color: $myBlueGreen;
+  font-weight: bold;
+}
+
+// Set font-family for code examples in quiz sections. 
+.quizCode {
+  font-family: 'Courier New', monospace;
+  font-weight: normal;
+}
+
+// ==================== BUTTONS ====================
+// Set colour and border colour for buttons.
+#myButton, #addBookBtn {
+  background-color: $blueGreenLight;
+  border-color: $blueGreenLight;
+}
+
+// ==================== PRACTICE SECTION RESULTS ====================
+// Set colour and remove bullets for favourite books list in events.html.
+#favouritesList {
+  list-style: none;
+  color: $myBlueGreen;
+}
+
+// Set position for animation paragraph in jquery.html.
+.movingParagraph {
+  position: relative;
+}
+
+// Set colour of text displayed from trying practice activties.
+.practiceSectionText {
+  color: $myBlueGreen;
+}
+
+// ==================== TABLES ====================
+// Horizontally center tables. 
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+  
+// ==================== IMAGES ==================== 
+// Set sizes for images used as examples (normal, small, tiny)
+#exampleImage {
+  padding-top: 16px;
+  max-width: 700px;
+  max-height: auto;
+}
+
+#exampleImageSmall {
+  padding-top: 16px;
+  max-width: 600px;
+  max-height: auto;
+}
+
+#exampleImageTiny {
+  max-width: 400px;
+  max-height: auto;
+}
+  
+ 

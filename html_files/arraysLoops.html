@@ -1,0 +1,419 @@
+<!-- ----------------------------------------------- IFS L4T15 - Back to JS -----------------------------------------------
+    
+    This is the Arrays and Loops page for my "Back To JS" website. It provides information about JavaScript 
+    Arrays and Loops (with focus on 'for' and 'while' loops), and includes examples and a practice section 
+    for users to interact with.
+    
+    Please see arraysLoops.js for this page's JavaScript code and functionality.
+    Please see 'style.css' for the styling of this page.
+
+---------------------------------------------------------------------------------------------------------------------- -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to SCSS file's compiled 'style.css' -->
+    <link href="/style.css" rel="stylesheet">
+    <!-- Link to Bootstrap 5 CSS. -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+        crossorigin="anonymous"
+    >
+    <title>Arrays & Loops</title>
+</head>
+
+<body>
+    <!-- ==================== HEADER SECTION ==================== -->
+    <header class=" myNav myNavBackground">
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <div class="container-fluid">
+                <!-- Navbar button (hamburger) for small viewports. -->
+                <button 
+                    class="navbar-toggler" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarSupportedContent" 
+                    aria-controls="navbarSupportedContent" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar categories with links to sections. -->
+                <div class="collapse navbar-collapse myNavBackground" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-fill w-100 me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="variables.html">Variables</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="conditionals.html">Conditional Statements</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="arraysLoops.html">Arrays & Loops</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="maps.html">Maps</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="functions.html">Functions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="events.html">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="jquery.html">jQuery</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+     <!-- ==================== PAGE HEADING SECTION ==================== -->
+     <div class="container-fluid pb-4 pt-2 sectionHeadings">
+        <div class="row gx-5 mx-4 my-3">
+            <div class="col-sm my-3 py-3 ps-0 text-center">
+                <h1  id="topOfPage" class="my-3 pt-5 display-1 sectionHeading">
+                    Basic JavaScript Syntax
+                </h1>
+            </div>
+        </div>
+    </div>
+
+     <!-- ==================== ARRAYS & LOOPS SECTION ==================== -->
+     <div class="container-fluid pb-4 pt-3 lightSection" id="arraysLoopsSection">
+        <!-- Row: section title. -->
+        <div class="row gx-5 mx-4 my-3 text-center">
+            <h1 class="text-center my-3 subSectionTitle">Arrays and Loops</h1>
+        </div>
+
+        <!-- Row: Arrays description. -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center">
+            <div class="col-sm-10 px-3 py-2">
+                <h2 class="text-center">What are arrays?</h2>
+                <p>
+                    Arrays are objects (i.e. a special type of variable) that 
+                    <a href="https://www.w3schools.com/js/js_arrays.asp" target="_blank" class="myLink">
+                        can hold multiple values
+                    </a>
+                    . For example, if we had a list of items (e.g. a list of country names), storing each country 
+                    name in single variables could become a hefty list to sort through when you're trying to find 
+                    a specific country.
+                </p>
+                <p>
+                    Arrays solve this problem, since an array can hold many values under a single name, and we can 
+                    access the values by referring to an index number.
+                </p>
+                <p><b>Note</b>
+                     that array indexes start with 0 (i.e. [0] is the first element, [1] is the second element, and so on.
+                </p>
+                <p>
+                    JavaScript comes with some handy built-in array methods to help you sort, search or edit an array, 
+                    as well as much more! The following list describes some of the main array methods available, or check 
+                    out 
+                    <a href="https://www.w3schools.com/jsref/jsref_obj_array.asp" target="_blank" class="myLink">
+                        w3schools complete JavaScript Array Reference
+                    </a>. 
+                    <ul>
+                        <li>
+                            <span class="codeExample">indexOf()</span>: 
+                            this searches the array for the given element and returns its position.
+                        </li>
+                        <li>
+                            <span class="codeExample">includes()</span>: 
+                            this checks if the array contains a given element.
+                        </li>
+                        <li>
+                            <span class="codeExample">remove()</span>: 
+                            this removes an item from the list.
+                        </li>
+                        <li>
+                            <span class="codeExample">pop()</span>: 
+                            this removes the last element in the array.
+                        </li>
+                        <li>
+                            <span class="codeExample">push()</span>: 
+                            this adds an element to the end of the array and returns the new length.
+                        </li>
+                        <li>
+                            <span class="codeExample">shift()</span>: 
+                            this removes the first element in the array.
+                        </li>
+                        <li>
+                            <span class="codeExample">sort()</span>: 
+                            this sorts elements in the array in ascending order.
+                        </li>
+                        <li>
+                            <span class="codeExample">splice()</span>: 
+                            this adds or removes elements in an array.
+                        </li>
+                        <li>
+                            <span class="codeExample">reverse()</span>: 
+                            this reverses the order of elements in the array.
+                        </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Row: Loops description. -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center">
+            <div class="col-sm-10 px-3">
+                <h2 class="text-center">What are loops?</h2>
+                <p>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" 
+                        target="_blank" class="myLink">
+                        Loops offer a quick and easy way to do something repeatedly.
+                    </a>
+                    There are many different types of loops in JavaScript, which all essentially do the same thing: they repeat 
+                    an action some number of times (including 0 times), based on a condition or set of conditions. 
+                    The various loop mechanisms offer different ways to determine the start and end points of the loop, and 
+                    there are various situations that are more easily served by one type of loop over the others.  
+                </p>
+                <p>
+                    Loops are useful when we want to run the same code repeatedly, each time with a 
+                    <a href="https://www.w3schools.com/js/js_loop_for.asp" target="_blank" class="myLink">
+                        different value
+                    </a>. 
+                    Some of the loops available in JavaScript are:
+                    <ul>
+                        <li>
+                            <span class="codeExample">for</span>: this loops through a block of code a number of times.
+                        </li>
+                        <li>
+                            <span class="codeExample">for/in</span>: this loops through the properties of an object.
+                        </li>
+                        <li>
+                            <span class="codeExample">for/of</span>: this loops through the values of an iterable object.
+                        </li>
+                        <li>
+                            <span class="codeExample">while</span>: this loops through a block of code while a 
+                            specified condition is true.
+                        </li>
+                        <li>
+                            <span class="codeExample">do while</span>: this also loops through a block of code 
+                            while a specified condition is true.
+                        </li>
+                    </ul>
+                </p>
+                <p>
+                    For now, we will only be focusing on 
+                    <span class="codeExample">for</span> loops and 
+                    <span class="codeExample">while</span> loops.
+                </p>
+            </div>
+        </div>
+
+        <!-- Row: For Loops example. -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center">
+            <div class="col-sm-10 px-3">
+                <h4 class="text-center my-3">For Loops</h4>
+                <p> 
+                    A <span class="codeExample">for</span> loop repeats until a specified condition 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" 
+                        target="_blank" class="myLink">
+                        evaluates to false
+                    </a>:
+                </p>
+                <div class="text-center">
+                    <figure class="figure">
+                        <img 
+                            src="/images/forLoopSyntax.png"  
+                            class="figure-img img-fluid rounded" 
+                            alt="JavaScript syntax for 'for loop'."
+                            id="exampleImageSmall"
+                        >
+                        <figcaption class="figure-caption">
+                            Image source: N.Dobbin (for HyperionDev Course IFS L4T15: JavaScript Refresher, 2022)
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <br>
+            <div class="col-sm-10 px-3 py-3">
+                <p>When a <span class="codeExample">for</span> loop executes, 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" 
+                        target="_blank" class="myLink">
+                        the following occurs
+                    </a>: 
+                    <ol>
+                        <li>
+                            <span class="codeExample">initialExpression</span>: 
+                            this is executed once before the code block's execution. It usually initializes one or 
+                            more loop counters, and can also declare variables.
+                        </li>
+                        <li>
+                            <span class="codeExample">conditionExpression</span>: 
+                            this 
+                            <a href="https://www.w3schools.com/js/js_loop_for.asp" target="_blank" class="myLink">
+                                defines the condition
+                            </a> 
+                            for executing the code block. The expression is evaluated and, if the value of 
+                            conditionExpression is true, the loop statements execute. If the value is false, the for 
+                            loop terminates. (Note: if the expression is omitted entirely, the condition is assumed to be true).
+                        </li>
+                        <li>
+                            <span class="codeExample">statement</span>: 
+                            The statement (i.e. the code block inside the for loop's curly braces) executes.
+                        </li>
+                        <li>
+                            <span class="codeExample">incrementExpression</span>: 
+                            If present, the update expression incrementExpression is executed (i.e., executed 
+                            every time after the code block's execution).
+                        </li>
+                        <li>Control returns to step 2.</li>
+                    </ol>
+                </p>
+            </div>
+        </div>
+
+        <!-- Row: While Loops example. -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center">
+            <div class="col-sm-10 px-3">
+                <h4 class="text-center my-3">While Loops</h4>
+                <p> 
+                    A <span class="codeExample">while</span> loop is the most general form of loop statements. 
+                    A while statement executes its statements as long as a specified condition evaluates to true 
+                    (i.e. while the condition is true), and stops executing  when the condition becomes false, 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" 
+                        target="_blank" class="myLink">
+                        passing control to the statement following the loop
+                    </a>
+                    .  The while loop syntax is as follows:
+                </p>
+                <div class="text-center">
+                    <figure class="figure">
+                        <img 
+                            src="/images/whileLoopSyntax.png"  
+                            class="figure-img img-fluid rounded" 
+                            alt="JavaScript syntax for 'while loop'."
+                            id="exampleImageSmall"
+                        >
+                        <figcaption class="figure-caption">
+                            Image source: N.Dobbin (for HyperionDev Course IFS L4T15: JavaScript Refresher, 2022)
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <br>
+            <div class="col-sm-10 px-3 pt-3 pb-4 mb-2">
+                <p>
+                    The condition test happens before the statement (i.e., the code block in the loop) is executed. 
+                    If the condition returns true, the statement is executed and the condition is tested again. 
+                    If the condition returns false, the execution stops (i.e. it breaks out of the loop).
+                </p>
+                <br>
+                <p class="lead fw-bold text-center">Beware the infinte loop!</p>
+                <p>
+                    Always avoid infinite loops by ensuring the condition in a loop eventually becomes false. 
+                    If we do not do this, the loop will never terminate! The statements in this example while loop 
+                    below would execute forever because the condition never becomes false:
+                </p>
+                <div class="text-center">
+                    <figure class="figure">
+                        <img 
+                            src="/images/infinteWhileLoop.png"  
+                            class="figure-img img-fluid rounded" 
+                            alt="JavaScript example of an infinte 'while loop'."
+                            id="exampleImageSmall"
+                        >
+                        <figcaption class="figure-caption">
+                            Image source: N.Dobbin (for HyperionDev Course IFS L4T15: JavaScript Refresher, 2022)
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row: back to top button. -->
+        <div class="row mx-4 gx-5">
+            <div class="col-sm text-center">
+                <a href = "#topOfPage">
+                    <button type="button" class="btn btn-secondary">Back to top</button>
+                </a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <hr>
+
+    <!-- Close loops section. -->    
+    </div>
+
+    <!-- ==================== PRACTICE SECTION ==================== -->
+    <!-- Row: Row: Practice section. -->
+    <div class="row gx-5 mx-4 my-3 justify-content-center" id="practiceLoopsSection">
+        <!-- Row: Practice section title. -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center">
+            <div class="col-sm-10 px-3 pt-3">
+                <h1 class="text-center my-3 subSectionTitle">Practice what you've learned!</h1>
+            </div>
+        </div>
+
+        <!-- Row: description (swapNumbers function example). -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center">
+            <div class="col-sm-10 px-3 pt-3 text-center">
+                <h2>Practice: Swapping Numbers</h2>
+                <p>
+                    This example demonstrates how we can use a  <span class="codeExample">for</span> loop to 
+                    swap numbers around.
+                </p>
+                <p>
+                    The function in this example is called swapNumbers(). It prompts a user to input a number 
+                    three times, and stores the inputted numbers in an array. It then iterates through the array 
+                    backwards, storing each digit in reverse order in a new array, and outputs the new array 
+                    (i.e. the reversed inputted numbers) to the <span class="codeExample">&lt;h5 id="arrayExample"&gt;</span> 
+                    and the <span class="codeExample">&lt;h5 id="loopsExample"&gt;</span> elements in the arraysLoops.html file.
+                </p>
+            </div>
+            <div class="text-center">
+                <figure class="figure">
+                    <img 
+                        src="/images/swapNumsFunction.png"  
+                        class="figure-img img-fluid rounded" 
+                        alt="JavaScript Code: function with for loop."
+                        id="exampleImageSmall"
+                    >
+                    <figcaption class="figure-caption">
+                        Image source: N.Dobbin (for HyperionDev Course IFS L4T15: JavaScript Refresher, 2022)
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <!-- Row: Practice activity section. -->
+        <div class="col-sm-10 px-3 pt-3 text-center">
+            <h4>Try it yourself!</h4>
+            <p>
+                See an array and a <span class="codeExample">for</span> loop in action by clicking the button below. 
+                To see what's going on behind the scenes, 
+                <b><em>right-click anywhere on the page and click inspect.</b></em>
+            </p>
+            <!-- "Try this function!" button with onclick event. -->
+            <div class="text-center">
+                <br>
+                <button type="button" class="btn btn-secondary btn-lg my-2" id="myButton" onclick="swapNumbers()">
+                    Try this function!
+                </button>
+                <div class="text-center">
+                    <h5 class="py-4" id="arrayExample"></h5>
+                    <h5 class="py-4" id="loopsExample"></h5>
+                </div>
+            </div>
+        </div>
+        <!-- Close Practice section. -->
+    </div>
+
+    <!-- Link to conditionals.js file. -->
+    <script type="text/javascript" src="/js_files/arraysLoops.js"></script>
+</body>
+</html>

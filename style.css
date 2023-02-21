@@ -1,0 +1,112 @@
+/*----------------------------------------------- IFS L4T15 - Back to JS -----------------------------------------------
+
+    This is the stylesheet for my "Back To JS" website, an interactive website that forms a tutorial of JavaScript concepts.
+    It contains the styling for all the pages on this site.
+
+    Please see 'README.md' for the list of files associated with this website and their details.
+
+-----------------------------------------------------------------------------------------------------------------------*/
+.myNav {
+  font-family: "PT Sans", sans-serif;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.myNavBackground {
+  background-color: #eceaeb !important;
+}
+
+body {
+  background-color: #eceaeb;
+  font-family: "PT Sans", sans-serif !important;
+}
+
+h1 {
+  font-size: 48px !important;
+  font-weight: 600 !important;
+}
+
+h5 {
+  font-size: 20px !important;
+  font-weight: 400 !important;
+}
+
+#pageHeadingSection {
+  background-color: #037971 !important;
+  color: #eceaeb;
+}
+
+.sectionHeadings {
+  background-color: #037971 !important;
+  color: #eceaeb;
+}
+
+.subSectionTitle {
+  color: #05a8aa;
+}
+
+.lightSection {
+  background-color: #F5F5F5 !important;
+  color: #212529;
+}
+
+.myLink {
+  color: #555;
+}
+
+.myLink:hover {
+  color: #05AA8B;
+}
+
+.codeExample {
+  font-family: "Courier New", monospace;
+  color: #05a8aa;
+  font-weight: bold;
+}
+
+.quizCode {
+  font-family: "Courier New", monospace;
+  font-weight: normal;
+}
+
+#myButton, #addBookBtn {
+  background-color: #05AA8B;
+  border-color: #05AA8B;
+}
+
+#favouritesList {
+  list-style: none;
+  color: #05a8aa;
+}
+
+.movingParagraph {
+  position: relative;
+}
+
+.practiceSectionText {
+  color: #05a8aa;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#exampleImage {
+  padding-top: 16px;
+  max-width: 700px;
+  max-height: auto;
+}
+
+#exampleImageSmall {
+  padding-top: 16px;
+  max-width: 600px;
+  max-height: auto;
+}
+
+#exampleImageTiny {
+  max-width: 400px;
+  max-height: auto;
+}/*# sourceMappingURL=style.css.map */

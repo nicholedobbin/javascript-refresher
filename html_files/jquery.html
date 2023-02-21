@@ -1,0 +1,655 @@
+<!-- ----------------------------------------------- IFS L4T15 - Back to JS -----------------------------------------------
+    
+    This is the jQuery HTML page for my "Back To JS" website. It provides information about jQuery syntax, 
+    functions, selectors, events, effects and effect chaining, and includes examples and a practice section 
+    for users to interact with.
+    
+    Please see jquery.js for this page's JavaScript code and functionality.
+    Please see 'style.css' for the styling of this page.
+
+---------------------------------------------------------------------------------------------------------------------- -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CDN Link to Google hosted jQuery library.  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- Link to jquery.js separate scripting file.  -->
+    <script src="../js_files/jquery.js"></script>
+    <!-- Link to SCSS file's compiled 'style.css' -->
+    <link href="../style.css" rel="stylesheet">
+    <!-- Link to Bootstrap 5 CSS. -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+        crossorigin="anonymous"
+    >
+    <title>jQuery</title>
+</head>
+
+<body>
+    <!-- ==================== HEADER SECTION ==================== -->
+    <header class=" myNav myNavBackground">
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <div class="container-fluid">
+                <!-- Navbar button (hamburger) for small viewports. -->
+                <button 
+                    class="navbar-toggler" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarSupportedContent" 
+                    aria-controls="navbarSupportedContent" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar categories with links to sections. -->
+                <div class="collapse navbar-collapse myNavBackground" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-fill w-100 me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="variables.html">Variables</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="conditionals.html">Conditional Statements</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="arraysLoops.html">Arrays & Loops</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="maps.html">Maps</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="functions.html">Functions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="events.html">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="jquery.html">jQuery</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+     <!-- ==================== PAGE HEADING SECTION ==================== -->
+     <div class="container-fluid pb-4 pt-2 sectionHeadings">
+        <div class="row gx-5 mx-4 my-3">
+            <div class="col-sm my-3 py-3 ps-0 text-center">
+                <h1  id="topOfPage" class="my-3 pt-5 display-1 sectionHeading">
+                    jQuery
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== JQUERY SECTION ==================== -->
+    <div class="container-fluid pb-4 pt-3 lightSection" id="jquerySection">
+        <!-- Row: section title. -->
+        <div class="row gx-5 mx-4 my-3 text-center">
+            <h1 class="text-center my-3 subSectionTitle">What is jQuery</h1>
+        </div>
+
+        <!-- Row: jQuery description. -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center">
+            <div class="col-sm-10 px-3 pt-3">
+                <p>   
+                    jQuery is a  
+                    <a href="https://jquery.com/" target="_blank" class="myLink">
+                        fast, small, and feature-rich JavaScript library
+                    </a>.
+                    Its purpose is to make using JavaScript on your website much simpler and easier. 
+                    jQuery takes a lot of common tasks that  to accomplish,   
+                    <a href="https://www.w3schools.com/jquery/jquery_intro.asp" target="_blank" class="myLink">
+                        require many lines of JavaScript code 
+                    </a>
+                    and wraps them into methods that you can call with a single line of code. It also simplifies 
+                    more complex JavaScript processes, like AJAX calls and DOM manipulation, and is one of the most 
+                    popular JavaScript libraries. The jQuery library contains the following features:
+                    <ul>
+                        <li>HTML/DOM manipulation</li>
+                        <li>CSS manipulation</li>
+                        <li>HTML event methods</li>
+                        <li>Effects and animations</li>
+                        <li>AJAX</li>
+                        <li>Utilities</li>       
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Row: jQuery setup/usage. -->
+        <div class="row gx-5 mx-4 my-3 text-start">
+            <div class="col-sm-6 px-3">
+                <h2 class="text-start my-3 pt-2">Getting started with jQuery </h2>
+                <p>
+                    The jQuery library is a single JavaScript file, which is referenced with the HTML
+                    <span class="codeExample">&lt;script&gt;</span> tag (this should be inside the 
+                    <span class="codeExample">&lt;head&gt;</span> tag's section). It can also be included from a 
+                    CDN (Content Delivery Network), instead of downloading and hosting it yourself, such as Google's 
+                    hosted version. Using the hosted (CDN) version from Google is advantageous because many users 
+                    already have downloaded jQuery from Google or Microsoft when visiting another site. 
+                    As a result, it will be loaded from a cache when they visit your site, enabling faster loading time. 
+                    Additionally, most CDN's will make sure that once a user requests a file from it, it will be served 
+                    from the server closest to them, enabling faster loading time. (
+                    <a href="https://www.hyperiondev.com/" target="_blank" class="myLink">
+                        Programming in JavaScript IV: jQuery, HyperionDev 2021
+                    </a>)
+                </p>
+            </div>
+            <div class="col-sm-6 px-3">
+                <h2 class="text-start my-3 pt-2">Separate scripting files</h2>
+                <p>
+                    It is generally recommended to use separate script files rather than having the script within 
+                    your HTML file. This allows for efficient code layout and readability. To create a separate scripting 
+                    file for your HTML as well as incorporating the jQuery library,  place it inside the 
+                    <span class="codeExample">&lt;head&gt;</span> tag's section. For example the image below shows this 
+                    page's HTML code, with the CDN and separate scripting file placed in the 
+                    <span class="codeExample">&lt;head&gt;</span> tag.
+                </p>
+                <div class="text-center">
+                    <figure class="figure">
+                        <img 
+                            src="/images/separateScriptingJquery.png"  
+                            class="figure-img img-fluid rounded" 
+                            alt="HTML Code for separate jQuery scripting files."
+                            id="exampleImageTiny"
+                        >
+                        <figcaption class="figure-caption">
+                            Image source: N.Dobbin (for HyperionDev Course IFS L4T15: JavaScript Refresher, 2022)
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <hr class="mt-5">
+        </div>
+
+        <!-- Row: jQuery syntax. -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center" id="jqSyntax">
+            <div class="col-sm-10 px-3 pt-3">
+                <h2 class="text-center pt-4 pb-3">jQuery Syntax</h2>
+                <p>
+                    With jQuery you select (or query) HTML elements and 
+                    <a href="https://www.w3schools.com/jquery/jquery_syntax.asp" target="_blank" class="myLink">
+                        perform "actions" on them
+                    </a>.
+                    The jQuery basic syntax looks like this: 
+                </p>
+                <p>
+                    <span class="codeExample">$(selector).action()</span>
+                </p>
+                <p>
+                    Where:
+                    <ul>
+                        <li>
+                            The <span class="codeExample">$</span> sign defines/accesses jQuery.
+                        </li>
+                        <li>
+                            The <span class="codeExample">(selector)</span> queries (i.e. finds) the HTML elements.
+                        </li>
+                        <li>
+                            The <span class="codeExample">action()</span> is the jQuery action to be performed on the element/s.
+                        </li>
+                    </ul>
+                </p>
+                <p>
+                    Some examples are:
+                    <ul>
+                        <li>
+                            <span class="codeExample">$(this).hide()</span> - hides the current element.
+
+                        </li>
+                        <li>
+                            <span class="codeExample">$("p").hide()</span> - hides all 
+                            <span class="codeExample">&lt;p&gt;</span> elements.
+                        </li>
+                        <li>
+                            <span class="codeExample">$(".test").hide()</span> - hides all elements with 
+                            <span class="codeExample">class="test"</span>.
+                        </li>
+                        <li>
+                            <span class="codeExample">$("#test").hide()</span> - hides the element with 
+ 
+                            <span class="codeExample">id="test"</span>.
+                        </li>
+                    </ul>
+                </p>
+            </div>
+            <hr class="mt-5">
+        </div>
+
+        <!-- Row: jQuery functions. -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center" id="jqFunctions">
+            <div class="col-sm-10 px-3 pt-3">
+                <h2 class="text-center pt-4 pb-3">Functions in jQuery</h2>
+                <p>
+                    Everything in jQuery happens thanks to functions (
+                    <a href="https://www.hyperiondev.com/" target="_blank" class="myLink">
+                        Programming in JavaScript IV: jQuery, HyperionDev 2021
+                    </a>). 
+                    It is important to remember that functions should only operate once a document has completely loaded. 
+                    This prevents any jQuery code from running before the document is finished loading (i.e. is 'ready'). 
+                    We can do this by wrapping all our jQuery methods inside a document ready event. We can write this 
+                    function declaration with either the standard jQuery definition (example 1 below), or with a shorter 
+                    method that does the same thing (example 2 below). Note that as of jQuery 3.0, only the first syntax is 
+                    recommended; the other syntaxes still work but are deprecated (
+                    <a href="https://api.jquery.com/ready/" target="_blank" class="myLink">jQuery API Documentation</a>
+                    ). Since this page is using a later version of jQuery, example 1 below displays the ready function as 
+                    deprecated (strikethrough).
+                </p>
+                <div class="text-center">
+                    <figure class="figure">
+                        <img 
+                            src="../images/jQueryFunctionSyntax.png" 
+                            class="figure-img img-fluid rounded" 
+                            alt="HTML Code for jQuery document ready syntax."
+                            id="exampleImageSmall"
+                        >
+                        <figcaption class="figure-caption">
+                            Image source: N.Dobbin (for HyperionDev Course IFS L4T15: JavaScript Refresher, 2022)
+                        </figcaption>
+                    </figure>
+                </div>     
+            </div>
+            <hr class="mt-5">
+        </div>
+
+        <!-- Row: jQuery selectors. -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center" id="jqSelectors">
+            <div class="col-sm-10 px-3 pt-3">
+                <h2 class="text-center pt-4 pb-3">jQuery Selectors</h2>
+                <p>
+                    jQuery selectors are one of the most important parts of the jQuery library (
+                    <a href="https://www.hyperiondev.com/" target="_blank" class="myLink">
+                        Programming in JavaScript IV: jQuery, HyperionDev 2021
+                    </a>). 
+                    They allow you to select and manipulate HTML elements. We use selectors to find HTML elements based 
+                    on their name, ID, classes, types, attributes, values of attributes and more, giving us full control 
+                    over how the webpage functions. jQuery selectors are based on the existing CSS Selectors, along with 
+                    its own customised selectors. All selectors in jQuery start with the dollar sign and parentheses:
+                    <span class="codeExample">$()</span>. Some of the most common selectors are described below. 
+                </p>
+                <p>
+                    <ul>
+                        <li>
+                            <b>The ID selector:</b> finds an HTML element based on its assigned ID attribute. For example, 
+                            you could select a specific element attributed the ID “example” with the code 
+                            <span class="codeExample">$(“#example”)</span>.
+                        </li>
+                        <li>
+                            <b>The class selector:</b> selects HTML elements based on which class attribute it has been 
+                            assigned to. For example, you could select specific elements with the class “example” using the code 
+                            <span class="codeExample">$(“.example”)</span>.
+                        </li>
+                        <li>
+                            <b>Other selectors:</b> element, class and ID selectors are the three most commonly used jQuery 
+                            selectors, and a wide range of other variations can be created with them. Some additional 
+                            jQuery selectors include  <span class="codeExample">$("*")</span>, which Selects all elements, 
+                            <span class="codeExample">$(this)</span>, which selects the current HTML element, 
+                            <span class="codeExample">$(“div.last”)</span>, which selects div elements with class=“last”, 
+                            <span class="codeExample">$(“button”)</span>, which selects all button elements, and 
+                            <span class="codeExample">$(“[href]”)</span>, which selects all link-based elements. 
+                            For a full list of interactive selectors, checkout 
+                            <a href="https://www.w3schools.com/jquery/jquery_selectors.asp" target="_blank" class="myLink">
+                            w3schools
+                            </a> 
+                           websites.     
+                        </li>
+                    </ul>
+                </p>
+            </div>
+            <hr class="mt-5">
+        </div>
+
+        <!-- Row: jQuery events. -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center" id="jqEvents">
+            <div class="col-sm-10 px-3 pt-3">
+                <h2 class="text-center pt-4 pb-3">jQuery Events</h2>
+                <p>
+                    jQuery is  
+                    <a href="https://www.w3schools.com/jquery/jquery_events.asp" target="_blank" class="myLink">
+                        tailor-made to respond to events
+                    </a> 
+                    in an HTML page. Events are all the user actions that a web page can respond to, for example moving 
+                    or hovering the mouse over an element, selecting from a dropdown menu, clicking on an element or 
+                    keyboard button. Events are represented by some action, and jQuery generates a response at the exact 
+                    moment that the action occurs. Examples of common events used in jQuery are:
+                </p>
+
+                <table class="table table-striped w-50 center">
+                    <tr>
+                        <th>Mouse Events</th>
+                        <th>Keyboard Events</th>
+                        <th>Form Events</th>
+                    </tr>
+                    <tr>
+                        <td>Click</td>
+                        <td>Key press</td>
+                        <td>Submit</td>
+                    </tr>
+                    <tr>
+                        <td>Double click</td>
+                        <td>Key down</td>
+                        <td>Change</td>
+                    </tr>
+                    <tr>
+                        <td>Mouse enter</td>
+                        <td>Key up</td>
+                        <td>Blur</td>
+                    </tr>
+                </table>
+
+                 
+            </div>
+            <hr class="mt-5">
+        </div>
+
+        <!-- Row: jQuery effects. -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center" id="jqEffects">
+            <div class="col-sm-10 px-3 pt-3">
+                <h2 class="text-center pt-4 pb-3">jQuery Effects</h2>
+                <p>
+                    Effects can be described as actions which do something to HTML elements on your web page (
+                    <a href="https://www.hyperiondev.com/" target="_blank" class="myLink">
+                        Programming in JavaScript IV: jQuery, HyperionDev 2021
+                    </a>).
+                    jQuery makes it easy to add simple, standard animations and effects to your web page, as well as 
+                    create 
+                    <a href="https://api.jquery.com/category/effects/" target="_blank" class="myLink">
+                        more sophisticated custom effects
+                    </a>. 
+                    Examples of common effects used in jQuery can be found below:
+                </p>
+                <table class="table table-striped w-50 center">
+                    <tr>
+                        <th>Effect</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>Hide</td>
+                        <td>Hides the selected element</td>
+                    </tr>
+                    <tr>
+                        <td>Show</td>
+                        <td>Reveals the selected element</td>
+                    </tr>
+                    <tr>
+                        <td>Fade</td>
+                        <td>Fades the element in or out</td>
+                    </tr>
+                    <tr>
+                        <td>Animate</td>
+                        <td>Animates some property of the element</td>
+                    </tr>
+                    <tr>
+                        <td>Stop</td>
+                        <td>Stops any effect of an element</td>
+                    </tr>
+                  </table> 
+            </div>
+            <hr class="mt-5">
+        </div>
+
+        <!-- Row: jQuery event syntax. -->
+        <div class="row gx-5 mx-4 my-3 text-start" id="jqEventSyntax">
+            <div class="col-sm-6 px-3">
+                <h2 class="text-start my-3 pt-2">jQuery Event syntax</h2>
+                <p>
+                    Effect methods are implemented in the following order (
+                    <a href="https://www.hyperiondev.com/" target="_blank" class="myLink">
+                        Programming in JavaScript IV: jQuery, HyperionDev 2021
+                    </a>):
+                    <ol>
+                        <li>Select the object where the event will occur</li>
+                        <li>Specify the type of event</li>
+                        <li>Create a function to carry out the effect </li>
+                        <li>Specify and customise the desired effect</li>
+                    </ol>
+                    For example, in the code below we create a function that, when a &lt;p&gt; element is clicked, 
+                    it will display that parapgraph's text as an alert message: 
+                </p>
+                <div class="text-center">
+                    <figure class="figure">
+                        <img 
+                            src="../images/jqueryEffectSyntax.png"  
+                            class="figure-img img-fluid rounded" 
+                            alt="HTML Code for separate jQuery effect syntax."
+                            id="exampleImageTiny"
+                        >
+                        <figcaption class="figure-caption">
+                            Image source: N.Dobbin (for HyperionDev Course IFS L4T15: JavaScript Refresher, 2022)
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="col-sm-6 px-3">
+                <h2 class="text-start my-3 pt-2">Effect chaining</h2>
+                <p>
+                    jQuery allows us to chain actions all into a single command, which allows for endless possibilities. 
+                    However, commands should make sense when being executed in this order (
+                    <a href="https://www.hyperiondev.com/" target="_blank" class="myLink">
+                        Programming in JavaScript IV: jQuery, HyperionDev 2021
+                    </a>
+                    ). Below is an example of a chained effect command that will select a button, change its colour, 
+                    slide it down the page, and then back up again:
+                </p>
+                <div class="text-center">
+                    <figure class="figure">
+                        <img 
+                            src="../images/jqueryChainedEffect.png"  
+                            class="figure-img img-fluid rounded" 
+                            alt="HTML Code for jQuery chained effect."
+                            id="exampleImageTiny"
+                        >
+                        <figcaption class="figure-caption">
+                            Image source: N.Dobbin (for HyperionDev Course IFS L4T15: JavaScript Refresher, 2022)
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row: back to top button. -->
+        <div class="row mx-4 pt-4 gx-5">
+            <div class="col-sm text-center">
+                <a href = "#topOfPage">
+                    <button type="button" class="btn btn-secondary">Back to top</button>
+                </a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <hr>
+    <!-- Close jquery section. -->    
+    </div>
+
+    <!-- ==================== PRACTICE SECTION ==================== -->
+    <div class="container-fluid pb-4 pt-3 lightSection" id="practiceJquerySection">
+        <!-- Row: Practice section title. -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center">
+            <div class="col-sm-10 px-3 pt-3">
+                <h1 class="text-center my-3 subSectionTitle">Practice what you've learned!</h1>
+            </div>
+        </div>
+
+        <!-- Row: Practice 1: description (fading animations). -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center">
+            <div class="col-sm-10 px-3 pt-3 text-center">
+                <h2>Practice 1: Fading animations</h2>
+                <p>
+                    This example demonstrates how we can use jQuery to fade an element in or out, such as an image.
+                </p>
+            </div>
+            <div class="col-sm-10 px-3 pt-3 text-start">
+                <p>
+                    First, we assign the &lt;img&gt; element we want to animate to a class called "fadingImage": 
+                    <div class="text-center">
+                        <figure class="figure">
+                            <img 
+                                src="../images/fadingImage.png"  
+                                class="figure-img img-fluid rounded" 
+                                alt="HTML Code for assigning image class."
+                                id="exampleImageSmall"
+                            >
+                            <figcaption class="figure-caption">
+                                Image source: N.Dobbin (for HyperionDev Course IFS L4T15: JavaScript Refresher, 2022)
+                            </figcaption>
+                        </figure>
+                    </div>
+                </p>
+                <p>
+                    Next, we assign the button elements we want to use as event listeners for this action to the 
+                    classes "fadeOutButton" and "fadeInButton" respectively:
+                    <div class="text-center">
+                        <figure class="figure">
+                            <img 
+                                src="../images/fadingButtons.png"  
+                                class="figure-img img-fluid rounded" 
+                                alt="HTML Code for assigning button class."
+                                id="exampleImageSmall"
+                            >
+                            <figcaption class="figure-caption">
+                                Image source: N.Dobbin (for HyperionDev Course IFS L4T15: JavaScript Refresher, 2022)
+                            </figcaption>
+                        </figure>
+                    </div>  
+                </p>
+                <p>
+                    Finally, we create the functions that allow the button to "listen" for the click event and
+                    either slowly fade out or quickly fade in the image depending on which button is clicked 
+                    (note the arguments for the fading speeds):
+                    <div class="text-center">
+                        <figure class="figure">
+                            <img 
+                                src="../images/jqueryFadingButtons.png"  
+                                class="figure-img img-fluid rounded" 
+                                alt="jQuery Code for fade in/out function."
+                                id="exampleImageTiny"
+                            >
+                            <figcaption class="figure-caption">
+                                Image source: N.Dobbin (for HyperionDev Course IFS L4T15: JavaScript Refresher, 2022)
+                            </figcaption>
+                        </figure>
+                    </div>  
+                </p>
+            </div>
+        </div>
+
+        <!-- Row: Practice 1: activity (fading animations). -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center">
+            <div class="col-sm-10 px-3 pt-3 text-center">
+                <h4>Try it yourself!</h4>
+                <p>Try fading this image in and out by clicking the buttons. To see what's going on behind the scenes, 
+                    <b><em>right-click anywhere on the page and click inspect.</b></em>
+                </p>
+                <div class="text-center">
+                    <figure class="figure">
+                        <img 
+                            src="../images/jqueryHideShow.png"  
+                            class="figure-img img-fluid rounded fadingImage" 
+                            alt="A black background with green text saying: Click the button below to hide and show this image."
+                            id="exampleImageTiny"
+                        >
+                        <figcaption class="figure-caption">
+                            Image source: N.Dobbin (for HyperionDev Course IFS L4T15: JavaScript Refresher, 2022)
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="text-center">
+                    <button class="fadeOutButton btn btn-success mx-auto my-1" id="myButton">Hide this image</button>
+                    <button class="fadeInButton btn btn-success mx-auto my-1" id="myButton">Show this image</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row: Practice 2: description (chained effects). -->
+        <div class="row gx-5 mx-4 my-4 pt-4 text-start justify-content-center">
+            <div class="col-sm-10 px-3 pt-3 text-center">
+                <h2>Practice 2: Chained effects</h2>
+                <p>
+                    This example demonstrates how we can use jQuery to animate a paragraph, allowing users to move 
+                    the parapgraph and change its background colours by pressing arrow keys.
+                </p>
+            </div>
+            <div class="col-sm-10 px-3 pt-3 text-start">
+                <p>
+                    First, we assign the &lt;p&gt; element we want to animate to a class called "movingParagraph": 
+                    <div class="text-center">
+                        <figure class="figure">
+                            <img 
+                                src="../images/fadingImage.png"  
+                                class="figure-img img-fluid rounded" 
+                                alt="HTML Code for assigning paragraph class."
+                                id="exampleImageSmall"
+                            >
+                            <figcaption class="figure-caption">
+                                Image source: N.Dobbin (for HyperionDev Course IFS L4T15: JavaScript Refresher, 2022)
+                            </figcaption>
+                        </figure>
+                    </div>
+                </p>
+                <p>
+                    Next, we create the function to animate the paragraph (i.e. to allow the user to move and change the 
+                    colour of the &lt;img&gt; element with arrow keys). We do this with an 'on keydown' function that encases 
+                    a switch statement (for the different key presses). Note that the code body in the switch statement's cases 
+                    consists of chained effects to create the animations.
+                    <div class="text-center">
+                        <figure class="figure">
+                            <img 
+                                src="../images/fadingButtons.png"  
+                                class="figure-img img-fluid rounded" 
+                                alt="jQuery Code for animation effects function."
+                                id="exampleImageSmall"
+                            >
+                            <figcaption class="figure-caption">
+                                Image source: N.Dobbin (for HyperionDev Course IFS L4T15: JavaScript Refresher, 2022)
+                            </figcaption>
+                        </figure>
+                    </div>  
+                </p>
+            </div>
+        </div>
+
+        <!-- Row: Practice 2: activity (chained effects). -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center">
+            <div class="col-sm-10 px-3 pt-3 text-center">
+                <h4>Try it yourself!</h4>
+                <p>Try moving this paragraph with your arrow keys. To see what's going on behind the scenes, 
+                    <b><em>right-click anywhere on the page and click inspect.</b></em>
+                </p>
+                <div class="text-center">
+                    <div class=" py-4 movingContainer">
+                        <p class="movingParagraph w-25" style="background-color: rgb(115, 147, 179); left: 20px; top: 0px;">
+                            Use the arrow keys on your keyboard to move me around and change my background colours.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row: back to top button. -->
+        <div class="row mx-4 py-4 gx-5">
+            <div class="col-sm text-center">
+                <a href = "#topOfPage">
+                    <button type="button" class="btn btn-secondary">Back to top</button>
+                </a>
+            </div>
+        </div>
+        <br>
+        <hr>
+
+    <!-- Close practice section. -->    
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!-- ----------------------------------------------- IFS L4T15 - Back to JS -----------------------------------------------
+    
+    This is the Maps page for my "Back To JS" website. It provides information about JavaScript 
+    maps and how they are used, and includes examples and a practice section for users to interact with.
+    
+    Please see maps.js for this page's JavaScript code and functionality.
+    Please see 'style.css' for the styling of this page.
+
+---------------------------------------------------------------------------------------------------------------------- -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to SCSS file's compiled 'style.css' -->
+    <link href="/style.css" rel="stylesheet">
+    <!-- Link to Bootstrap 5 CSS. -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+        crossorigin="anonymous"
+    >
+    <title>Maps</title>
+</head>
+
+<body>
+    <!-- ==================== HEADER SECTION ==================== -->
+    <header class=" myNav myNavBackground">
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <div class="container-fluid">
+                <!-- Navbar button (hamburger) for small viewports. -->
+                <button 
+                    class="navbar-toggler" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarSupportedContent" 
+                    aria-controls="navbarSupportedContent" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar categories with links to sections. -->
+                <div class="collapse navbar-collapse myNavBackground" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-fill w-100 me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="variables.html">Variables</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="conditionals.html">Conditional Statements</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="arraysLoops.html">Arrays & Loops</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="maps.html">Maps</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="functions.html">Functions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="events.html">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="jquery.html">jQuery</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+     <!-- ==================== PAGE HEADING SECTION ==================== -->
+     <div class="container-fluid pb-4 pt-2 sectionHeadings">
+        <div class="row gx-5 mx-4 my-3">
+            <div class="col-sm my-3 py-3 ps-0 text-center">
+                <h1  id="topOfPage" class="my-3 pt-5 display-1 sectionHeading">
+                    Basic JavaScript Syntax
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MAPS SECTION ==================== -->
+    <div class="container-fluid pb-4 pt-3 lightSection" id="mapsSection">
+        <!-- Row: Maps section title. -->
+        <div class="row gx-5 mx-4 my-3 text-center">
+            <h1 class="text-center my-3 subSectionTitle">Maps</h1>
+        </div>
+
+        <!-- Row: Maps description. -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center">
+            <div class="col-sm-10 px-3 pt-3">
+                <h2 class="text-center">What are Maps?</h2>
+                <p>
+                    A JavaScript Map is an object that holds key:value pairs (where the keys    
+                    <a href="https://www.w3schools.com/js/js_object_maps.asp" target="_blank" class="myLink">
+                        can be any datatype
+                    </a>
+                    ) and remembers the 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map" 
+                        target="_blank" class="myLink">
+                        original insertion order of the keys
+                    </a>
+                    . You can create a map two ways:
+                    <ol>
+                        <li>by passing an array to <span class="codeExample">new Map()</span></li>
+                        <li>by creating a map and using <span class="codeExample">Map.set()</span></li>
+                    </ol>
+                </p>
+                <div class="text-center">
+                    <figure class="figure">
+                        <img 
+                            src="/images/mapMethods.png"  
+                            class="figure-img img-fluid rounded" 
+                            alt="JavaScript Code for creating maps."
+                            id="exampleImageTiny"
+                        >
+                        <figcaption class="figure-caption">
+                            Image source: N.Dobbin (for HyperionDev Course IFS L4T15: JavaScript Refresher, 2022)
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row: Map Methods example. -->
+        <div class="row gx-5 mx-4 my-3 text-start justify-content-center">
+            <div class="col-sm-10 px-3 pt-4">
+                <h2 class="text-center mt-4 mb-3">JavaScript Map methods</h2>
+                <p> 
+                    JavaScript has a number of built in Map instance methods (you can find them all at 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map" 
+                        target="_blank" class="myLink">
+                        MDN Web Docs
+                    </a>
+                    ). Some basic map methods are listed below:
+                    <ul>
+                        <li>
+                            <span class="codeExample">has()</span>
+                            - checks to see if a key exists in the map and returns a boolean 
+                        </li>
+                        <li>
+                            <span class="codeExample">get()</span>
+                            - returns the value of the given key
+                        </li>
+                        <li>
+                            <span class="codeExample">delete()</span>
+                            - deletes the given key-value pair from the map
+                        </li>
+                        <li>
+                            <span class="codeExample">clear()</span>
+                            - removes all key-value pairs in a map 
+                        </li>
+                    </ul>
+                </p>
+                <br>
+                <h5 class="text-center mt-4">Method examples and output:</h5>
+                <div class="text-center">
+                    <figure class="figure">
+                        <img 
+                            src="/images/mapMethods2.png"  
+                            class="figure-img img-fluid rounded" 
+                            alt="JavaScript map methods examples."
+                            id="exampleImageSmall"
+                        >
+                        <figcaption class="figure-caption">
+                            Image source: N.Dobbin (for HyperionDev Course IFS L4T15: JavaScript Refresher, 2022)
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="text-center">
+                    <figure class="figure">
+                        <img 
+                            src="/images/mapMethodsOutput.png"  
+                            class="figure-img img-fluid rounded" 
+                            alt="JavaScript map methods output examples."
+                            id="exampleImageSmall"
+                        >
+                        <figcaption class="figure-caption">
+                            Image source: N.Dobbin (for HyperionDev Course IFS L4T15: JavaScript Refresher, 2022)
+                        </figcaption>
+                    </figure>
+                </div>
+                <br>
+                <p>
+                    You can find more tutorials and examples for each method at 
+                    <a href="https://www.w3schools.com/js/js_object_maps.asp" target="_blank" class="myLink">
+                        w3schools
+                    </a>.
+                </p>
+                <br>
+            </div>
+        </div>
+
+        <!-- Row: back to top button. -->
+        <div class="row mx-4 gx-5">
+            <div class="col-sm text-center">
+                <a href = "#topOfPage">
+                    <button type="button" class="btn btn-secondary">Back to top</button>
+                </a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <hr>
+    <!-- Close Maps section. -->    
+    </div>
+
+    <!-- ==================== PRACTICE SECTION ==================== -->
+    <div class="container-fluid pb-4 pt-3 lightSection" id="practiceMapsSection">
+        <!-- Row: Practice section title. -->
+        <div class="row gx-5 mx-4 my-3 text-center">
+            <h1 class="text-center mb-4 subSectionTitle">Practice what you've learned!</h1>
+        </div>
+
+        <!-- Row: Quiz Question 1. -->
+        <div class="container-fluid my-3">
+            <div class="card border-secondary">
+                <!-- Quiz header. -->
+                <div class="card-header bg-secondary text-white">
+                    Question 1:
+                </div>
+                <!-- Q1 question and multiple choice options. -->
+                <div class="card-body">
+                    <p class="mapsQuiz" id="question1">
+                        True or false: The <span class="codeExample">has()</span> 
+                        method checks to see if a key exists in the map and returns a boolean.
+                    </p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answer1" id="radio1" value="correct">
+                        <label class="form-check-label" for="radio1">
+                            <span class="quizCode">
+                                true;
+                            </span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answer1" id="radio2" value="wrong">
+                        <label class="form-check-label" for="radio2">
+                            <span class="quizCode">
+                                false;
+                            </span>
+                        </label>
+                    </div>
+                    <br>
+                    <!-- submit button -->
+                    <div id="quizSubmit">
+                        <input class="btn btn-secondary" id="submitButton" type="submit" value="Submit" 
+                        onclick="getQuizAnswer('answer1')">
+                    </div>
+                </div>
+                <div>
+                    <p id="results"></p>
+                </div>
+             </div>
+        </div>
+
+        <!-- Row: Quiz Question 2. -->
+        <div class="container-fluid my-3">
+            <div class="card border-secondary">
+                <!-- Quiz header. -->
+                <div class="card-header bg-secondary text-white">
+                    Question 2:
+                </div>
+
+                <!-- Q2 question and multiple choice options. -->
+                <div class="card-body">
+                    <p class="variablesQuiz" id="varQuizQuestion2">
+                        Which of the following is the correct syntax for the <span class="codeExample">get()</span> 
+                        method?
+                    </p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answer2" id="vQ2Radio1" value="wrong">
+                        <label class="form-check-label" for="vQ2Radio1">
+                            <span class="quizCode">
+                                get.vegetables("broccoli");
+                            </span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answer2" id="vQ2Radio2" value="wrong">
+                        <label class="form-check-label" for="vQ2Radio2">
+                            <span class="quizCode">
+                                get(vegetables, "broccoli");
+                            </span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answer2" id="vQ2Radio3" value="correct">
+                        <label class="form-check-label" for="vQ2Radio3">
+                            <span class="quizCode">
+                                vegetables.get("broccoli");
+                            </span>
+                        </label>
+                    </div>
+                    <br>
+                    <!-- submit button -->
+                    <div id="quizSubmit">
+                        <input class="btn btn-secondary" id="submitButton" type="submit" value="Submit" 
+                        onclick="getQuizAnswer('answer2')">
+                    </div>
+                    
+                </div>
+             </div>
+        </div>
+
+        <!-- Row: back to top button. -->
+        <div class="row mx-4 py-4 gx-5">
+            <div class="col-sm text-center">
+                <a href = "#topOfPage">
+                    <button type="button" class="btn btn-secondary">Back to top</button>
+                </a>
+            </div>
+        </div>
+        <br>
+        <hr>
+    <!-- Close Practice section. -->    
+    </div>
+
+    <!-- Link to maps.js file -->
+    <script src="/js_files/maps.js"></script>
+</body>
+</html>
