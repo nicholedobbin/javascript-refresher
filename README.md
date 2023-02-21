@@ -7,7 +7,7 @@ This is an interactive website that forms a tutorial of JavaScript concepts and 
 Each internal link/webpage has its own JavaScript file which handles the functionality for the practice sections of their related HTML file.
 
 ### **Try It Out on Netlify** 
-Link: []()
+Link: [https://javascript-refresher.netlify.app/](https://javascript-refresher.netlify.app/)
 
 <hr>
 
