@@ -114,6 +114,8 @@ that the answer is incorrect.
 1. Click on any of the tabs in the navbar to learn about different JavaScript concents. 
 2. In each page, you can read through the refresher notes and practice the concept in the "Practice what you've learned!" section at the bottom of the page.
 
+## **Screenshot example of this site**
+![Screenshot of Jquery Refresher page on this site.](markdown/Javascript%20Fundamentals%20website.png)
 <hr>
 
 ## **References** 
